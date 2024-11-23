@@ -26,6 +26,8 @@ namespace Mechadroids {
 
         public void LogicUpdate() {
             //handle player active state functionality
+            // Debug.Log(inputHandler.MovementInput);
+            // Debug.Log(inputHandler.MouseDelta);
         }
 
         public void PhysicsUpdate() {

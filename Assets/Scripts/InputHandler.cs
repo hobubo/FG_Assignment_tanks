@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Mechadroids {
     /// <summary>
@@ -13,6 +14,23 @@ namespace Mechadroids {
 
         public void Initialize() {
             // initialize input here
+            inputActions = new InputActions();
+            inputActions.Player.Enable();
+            inputActions.Player.Move.performed += OnMove;
+            inputActions.Player.Move.canceled += OnStop;
+            inputActions.Player.Look.performed += OnLook;
+        }
+
+        void OnMove(InputAction.CallbackContext ctx) {
+            MovementInput = ctx.ReadValue<Vector2>();
+        }
+
+        void OnStop(InputAction.CallbackContext ctx) {
+            MovementInput = Vector2.zero;
+        }
+
+        void OnLook(InputAction.CallbackContext ctx) {
+            MouseDelta = ctx.ReadValue<Vector2>();
         }
 
         public void SetCursorState(bool visibility, CursorLockMode lockMode) {
