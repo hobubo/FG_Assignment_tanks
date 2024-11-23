@@ -1,6 +1,7 @@
 using Mechadroids.UI;
 using Unity.Cinemachine;
 using UnityEngine;
+using System.Reflection;
 
 namespace Mechadroids {
     public class PlayerEntityHandler : IEntityHandler {
@@ -45,9 +46,14 @@ namespace Mechadroids {
         }
 
         private void InitializeDebugMenu() {
-            debugMenuHandler.AddUIElement(UIElementType.Single, "MoveSpeed", new float [] { playerReference.playerSettings.moveSpeed }, (newValue) => {
-                playerReference.playerSettings.moveSpeed = newValue[0];
-            });
+
+            FieldInfo[] fields = playerReference.playerSettings.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
+            foreach(FieldInfo field in fields) {
+                debugMenuHandler.AddUIElement(UIElementType.Single, field.Name, new float [] { (float)field.GetValue(playerReference.playerSettings) }, (newValue) => {
+                    field.SetValue(playerReference.playerSettings, newValue[0]);
+                });
+            }
 
         }
 

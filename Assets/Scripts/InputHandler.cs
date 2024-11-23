@@ -13,8 +13,8 @@ namespace Mechadroids {
         public InputActions InputActions => inputActions;
 
         public void Initialize() {
-            // initialize input here
             inputActions = new InputActions();
+            inputActions.UI.Enable();
             inputActions.Player.Enable();
             inputActions.Player.Move.performed += OnMovePerformed;
             inputActions.Player.Move.canceled += OnMoveCanceled;
