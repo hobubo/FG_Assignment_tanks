@@ -16,21 +16,26 @@ namespace Mechadroids {
             // initialize input here
             inputActions = new InputActions();
             inputActions.Player.Enable();
-            inputActions.Player.Move.performed += OnMove;
-            inputActions.Player.Move.canceled += OnStop;
-            inputActions.Player.Look.performed += OnLook;
+            inputActions.Player.Move.performed += OnMovePerformed;
+            inputActions.Player.Move.canceled += OnMoveCanceled;
+            inputActions.Player.Look.performed += OnAimPerformed;
+            inputActions.Player.Look.canceled += OnAimCanceled;
         }
 
-        void OnMove(InputAction.CallbackContext ctx) {
+        void OnMovePerformed(InputAction.CallbackContext ctx) {
             MovementInput = ctx.ReadValue<Vector2>();
         }
 
-        void OnStop(InputAction.CallbackContext ctx) {
+        void OnMoveCanceled(InputAction.CallbackContext ctx) {
             MovementInput = Vector2.zero;
         }
 
-        void OnLook(InputAction.CallbackContext ctx) {
+        void OnAimPerformed(InputAction.CallbackContext ctx) {
             MouseDelta = ctx.ReadValue<Vector2>();
+        }
+
+        void OnAimCanceled(InputAction.CallbackContext ctx) {
+            MouseDelta = Vector2.zero;
         }
 
         public void SetCursorState(bool visibility, CursorLockMode lockMode) {
