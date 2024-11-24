@@ -29,7 +29,8 @@ namespace Mechadroids {
 
         public void LogicUpdate() {
             //handle player active state functionality
-            HandleMovement();
+            // HandleMovement();
+            Move();
             HandleTurretAiming();
 
             // if(Mathf.Approximately(currentSpeed, 0) && inputHandler.MouseDelta == Vector2.zero) {
@@ -49,21 +50,25 @@ namespace Mechadroids {
             // Debug.Log("exiting Active state");
         }
 
+
         private void HandleMovement() {
-            if(inputHandler.MovementInput.y != 0) {
-                currentSpeed += inputHandler.MovementInput.y * playerReference.playerSettings.acceleration * Time.deltaTime;
-            }
-            else {
-                currentSpeed = Mathf.MoveTowards(currentSpeed, 0, playerReference.playerSettings.deceleration * Time.deltaTime);
-            }
-
+            // create accelerate and decelerate logic
+            var accelerate = inputHandler.MovementInput.y * playerReference.playerSettings.acceleration * Time.deltaTime;
+            var decelerate = - Mathf.Sign(currentSpeed) * playerReference.playerSettings.deceleration * Time.deltaTime;
+            // conditionally sets accelerate and decelerate based on Input
+            currentSpeed += inputHandler.MovementInput.y != 0 ? accelerate : decelerate;
+            // adjust speed based on slopes
             currentSpeed = EntityHelper.HandleSlope(playerReference.tankBody, playerReference.playerSettings.maxSlopeAngle, currentSpeed);
-
-            currentSpeed = Mathf.Clamp(currentSpeed, -playerReference.playerSettings.moveSpeed, playerReference.playerSettings.moveSpeed);
-            playerReference.tankBody.Translate(Vector3.forward * (currentSpeed * Time.deltaTime));
-
-            float rotationAmount = inputHandler.MovementInput.x * playerReference.playerSettings.rotationSpeed * Time.deltaTime;
-            playerReference.tankBody.Rotate(Vector3.up, rotationAmount);
+            // limits speed to min and max
+            currentSpeed = Mathf.Clamp(currentSpeed, - playerReference.playerSettings.moveSpeed, + playerReference.playerSettings.moveSpeed);
+            // update position
+            playerReference.tankBody.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+            // create rotation logic
+            var rotation = inputHandler.MovementInput.x * playerReference.playerSettings.rotationSpeed * Time.deltaTime;
+            // conditionally sets rotation to inverse if moving backwards
+            rotation = currentSpeed > 0 ? rotation : -rotation;
+            // update rotation
+            playerReference.tankBody.Rotate(Vector3.up, rotation);
         }
 
         private void HandleTurretAiming() {
