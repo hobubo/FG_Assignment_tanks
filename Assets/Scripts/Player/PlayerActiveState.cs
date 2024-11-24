@@ -24,7 +24,7 @@ namespace Mechadroids {
 
         public void Enter() {
             // Any initialization when entering the state
-            Debug.Log("enter Active state");
+            // Debug.Log("enter Active state");
         }
 
         public void LogicUpdate() {
@@ -46,7 +46,7 @@ namespace Mechadroids {
 
         public void Exit() {
             // Clean up when exiting the state
-            Debug.Log("exiting Active state");
+            // Debug.Log("exiting Active state");
         }
 
         private void HandleMovement() {

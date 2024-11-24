@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  enemySettings: {fileID: 0}
+  enemySettings: {fileID: 11400000, guid: c168c569ff9c8fa4e8d59b9d394cee90, type: 2}
 --- !u!54 &4821461318295227273
 Rigidbody:
   m_ObjectHideFlags: 0
