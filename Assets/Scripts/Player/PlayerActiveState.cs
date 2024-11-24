@@ -5,6 +5,7 @@ namespace Mechadroids {
         private readonly InputHandler inputHandler;
         private readonly PlayerReference playerReference;
         private readonly HitIndicator hitIndicatorInstance;
+        private IEntityHandler entityHandler;
 
         private float currentSpeed;
         private float turretAngle = 0f;
@@ -15,6 +16,7 @@ namespace Mechadroids {
             InputHandler inputHandler,
             PlayerReference playerReference,
             HitIndicator hitIndicatorInstance) {
+            this.entityHandler = entityHandler;
             this.inputHandler = inputHandler;
             this.playerReference = playerReference;
             this.hitIndicatorInstance = hitIndicatorInstance;
@@ -22,12 +24,20 @@ namespace Mechadroids {
 
         public void Enter() {
             // Any initialization when entering the state
+            Debug.Log("enter Active state");
         }
 
         public void LogicUpdate() {
             //handle player active state functionality
             HandleMovement();
             HandleTurretAiming();
+
+            // if(Mathf.Approximately(currentSpeed, 0) && inputHandler.MouseDelta == Vector2.zero) {
+            //     entityHandler.EntityState.Exit();
+            //     entityHandler.EntityState = new PlayerIdleState(entityHandler, inputHandler, playerReference, hitIndicatorInstance);
+            //     entityHandler.EntityState.Enter();
+            // }
+
         }
 
         public void PhysicsUpdate() {
@@ -36,6 +46,7 @@ namespace Mechadroids {
 
         public void Exit() {
             // Clean up when exiting the state
+            Debug.Log("exiting Active state");
         }
 
         private void HandleMovement() {
