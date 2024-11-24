@@ -7,7 +7,7 @@ namespace Mechadroids {
     public class PlayerEntityHandler : IEntityHandler {
         private readonly PlayerPrefabs playerPrefabs;
         private readonly InputHandler inputHandler;
-        private readonly Transform playerStartPosition;
+        private readonly Transform playerStart;
         private readonly CinemachineCamera followCamera;
         private readonly DebugMenuHandler debugMenuHandler;
 
@@ -18,12 +18,12 @@ namespace Mechadroids {
 
         public PlayerEntityHandler(PlayerPrefabs playerPrefabs,
             InputHandler inputHandler,
-            Transform playerStartPosition,
+            Transform playerStart,
             CinemachineCamera followCamera,
             DebugMenuHandler debugMenuHandler) {
             this.playerPrefabs = playerPrefabs;
             this.inputHandler = inputHandler;
-            this.playerStartPosition = playerStartPosition;
+            this.playerStart = playerStart;
             this.followCamera = followCamera;
             this.debugMenuHandler = debugMenuHandler;
         }
@@ -32,7 +32,8 @@ namespace Mechadroids {
             inputHandler.SetCursorState(false, CursorLockMode.Locked);
 
             playerReference = Object.Instantiate(playerPrefabs.playerReferencePrefab);
-            playerReference.transform.position = playerStartPosition.position;
+            playerReference.transform.position = playerStart.position;
+            playerReference.transform.rotation = playerStart.rotation;
             followCamera.Follow = playerReference.transform;
 
             hitIndicatorInstance = Object.Instantiate(playerPrefabs.hitIndicatorPrefab);

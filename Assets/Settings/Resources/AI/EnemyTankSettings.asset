@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyTankSettings
   m_EditorClassIdentifier: 
   enemy:
-    enemyType: 0
-    enemyReferencePrefab: {fileID: 0}
+    enemyType: 1
+    enemyReferencePrefab: {fileID: 1215594269258311897, guid: 35902d950096e064799095795d4d4e94, type: 3}
     totalHealth: 100
     patrolSpeed: 2
     patrolRotationSpeed: 1
@@ -23,4 +23,4 @@ MonoBehaviour:
     attackRange: 30
     attackSpeed: 7
     attackRotationSpeed: 2
-  routeSettings: {fileID: 0}
+  routeSettings: {fileID: 11400000, guid: b974bf7f0d3e1d94aa9f653c9db33c66, type: 2}

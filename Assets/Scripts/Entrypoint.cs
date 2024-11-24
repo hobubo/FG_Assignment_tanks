@@ -8,7 +8,7 @@ namespace Mechadroids {
     /// in this state it breaks the single responsibility principle. System initialization and systems state should be handled separately.
     /// </summary>
     public class Entrypoint : MonoBehaviour {
-        public Transform playerStartPosition;
+        public Transform playerStart;
         public CinemachineCamera followCamera;
         public Transform aiParentTransform;
 
@@ -36,7 +36,7 @@ namespace Mechadroids {
             debugMenuHandler = new DebugMenuHandler(uiPrefabs, inputHandler);
             debugMenuHandler.Initialize();
 #endif
-            playerEntityHandler = new PlayerEntityHandler(playerPrefabs, inputHandler, playerStartPosition, followCamera, debugMenuHandler);
+            playerEntityHandler = new PlayerEntityHandler(playerPrefabs, inputHandler, playerStart, followCamera, debugMenuHandler);
             playerEntityHandler.Initialize();
 
             aiEntitiesHandler = new AIEntitiesHandler(aISettings, aiParentTransform);

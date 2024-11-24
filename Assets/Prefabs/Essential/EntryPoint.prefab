@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d713a108a804702a876cab4b4cad26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStartPosition: {fileID: 0}
+  playerStart: {fileID: 4371268229298460587}
   followCamera: {fileID: 0}
   aiParentTransform: {fileID: 0}
 --- !u!1 &5833485361847976944
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371268229298460587}
   m_Layer: 0
-  m_Name: PlayerStartPosition
+  m_Name: PlayerStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
