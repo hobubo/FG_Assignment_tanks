@@ -4,6 +4,7 @@ namespace Mechadroids {
     public class EnemyPatrolState: IEntityState {
         private readonly IEntityHandler entityHandler;
         private readonly EnemyReference enemyReference;
+        private Transform playerTransform;
         private int currentPatrolIndex;
 
         public EnemyPatrolState(IEntityHandler entityHandler, EnemyReference enemyReference) {
@@ -12,11 +13,13 @@ namespace Mechadroids {
         }
 
         public void Enter() {
-            // Optionally set idle animation
+            if(playerTransform) return;
+            playerTransform = GameObject.FindWithTag("Player").transform;
         }
 
         public void LogicUpdate() {
             MoveTowardsPatrolPoint();
+            if(IsPlayerInDetectionRange()) TransitionToAttackState();
         }
 
         public void PhysicsUpdate() {
@@ -26,10 +29,16 @@ namespace Mechadroids {
             // Cleanup if necessary
         }
 
-        private void TransitionToIdleState() {
+        private void TransitionToAttackState() {
             Exit();
-            // entityHandler.EntityState = new EnemyIdleState(entityHandler, enemyReference);
-            // entityHandler.EntityState.Enter();
+            entityHandler.EntityState = new EnemyAttackState(entityHandler, enemyReference, playerTransform);
+            entityHandler.EntityState.Enter();
+        }
+
+        private bool IsPlayerInDetectionRange() {
+            if(playerTransform == null) return false;
+            float distance = Vector3.Distance(enemyReference.transform.position, playerTransform.position);
+            return distance <= enemyReference.enemySettings.enemy.detectionRadius;
         }
 
         private void SetNextPatrolDestination() {
