@@ -30,7 +30,7 @@ namespace Mechadroids {
         public void LogicUpdate() {
             //handle player active state functionality
             // HandleMovement();
-            Move();
+            HandleMovement();
             HandleTurretAiming();
 
             // if(Mathf.Approximately(currentSpeed, 0) && inputHandler.MouseDelta == Vector2.zero) {
