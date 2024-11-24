@@ -7,9 +7,10 @@ namespace Mechadroids {
         private Transform playerTransform;
         private int currentPatrolIndex;
 
-        public EnemyPatrolState(IEntityHandler entityHandler, EnemyReference enemyReference) {
+        public EnemyPatrolState(IEntityHandler entityHandler, EnemyReference enemyReference, Transform playerTransform = null) {
             this.entityHandler = entityHandler;
             this.enemyReference = enemyReference;
+            this.playerTransform = playerTransform;
         }
 
         public void Enter() {

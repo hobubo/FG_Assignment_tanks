@@ -20,6 +20,7 @@ namespace Mechadroids {
 
         public void LogicUpdate() {
             MoveIntoAttackRange();
+            if(IsPlayerOutOfRange()) TransitionToPatrolState();
         }
 
         public void PhysicsUpdate() {
@@ -29,18 +30,18 @@ namespace Mechadroids {
             // Cleanup if necessary
         }
 
-        // private void TransitionToAttackState() {
-        //     Exit();
-        //     entityHandler.EntityState = new EnemyAttackState(entityHandler, enemyReference);
-        //     entityHandler.EntityState.Enter();
-        // }
+        private void TransitionToPatrolState() {
+            Exit();
+            entityHandler.EntityState = new EnemyPatrolState(entityHandler, enemyReference, attackTarget);
+            entityHandler.EntityState.Enter();
+        }
 
-        // private bool IsPlayerInDetectionRange() {
-        //     if(playerTransform == null) return false;
-        //     float distance = Vector3.Distance(enemyReference.transform.position, playerTransform.position);
-        //     return distance <= enemyReference.enemySettings.enemy.detectionRadius;
-        // }
-        //
+        private bool IsPlayerOutOfRange() {
+            if(!attackTarget) return false;
+            float distance = Vector3.Distance(enemyReference.transform.position, attackTarget.position);
+            return distance >= enemyReference.enemySettings.enemy.detectionRadius;
+        }
+
 
         private void Attack() {
             if(Time.time - timerStartTime > enemyReference.enemySettings.enemy.attackSpeed) {
