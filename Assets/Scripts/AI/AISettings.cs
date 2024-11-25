@@ -18,6 +18,7 @@ namespace Mechadroids {
 
     [Serializable]
     public class EnemyGroup {
+        public EnemyType enemyType;
         public EnemySettings enemySettings;
         public int enemyCount = 1;
     }

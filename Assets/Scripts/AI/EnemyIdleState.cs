@@ -14,6 +14,7 @@ namespace Mechadroids {
 
         public void Enter() {
             idleTimer = 0f;
+            Debug.Log(enemyReference);
             // Optionally set idle animation
         }
 

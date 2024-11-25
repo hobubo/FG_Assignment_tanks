@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268685e767d6401e8083a69af09e11a1, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 12
   rotationSpeed: 15
-  acceleration: 5
-  deceleration: 4
+  acceleration: 7
+  deceleration: 7
   maxSlopeAngle: 45
   turretRotationSpeed: 10
   barrelRotationSpeed: 10

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee1b7f9b987f4edaaca80e2751b3ec99, type: 3}
-  m_Name: EnemyTankSettings
+  m_Name: EnemyWalkerSettings
   m_EditorClassIdentifier: 
   enemy:
-    enemyType: 1
-    enemyReferencePrefab: {fileID: 1215594269258311897, guid: 35902d950096e064799095795d4d4e94, type: 3}
+    enemyType: 2
+    enemyReferencePrefab: {fileID: -5237617481224001347, guid: dfdf0cb776bbd654aba7d500495e4ba1, type: 3}
     totalHealth: 100
-    patrolSpeed: 2
+    patrolSpeed: 10
     patrolRotationSpeed: 1
-    detectionRadius: 70
-    maxDistanceFromPlayer: 90
-    attackRange: 60
+    detectionRadius: 10
+    maxDistanceFromPlayer: 5
+    attackRange: 30
     attackSpeed: 7
     attackRotationSpeed: 2
-  routeSettings: {fileID: 11400000, guid: b974bf7f0d3e1d94aa9f653c9db33c66, type: 2}
+  routeSettings: {fileID: 11400000, guid: de461b9d8cbda494485366b267e143fb, type: 2}

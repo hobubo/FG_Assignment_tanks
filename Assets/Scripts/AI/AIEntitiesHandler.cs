@@ -20,7 +20,7 @@ namespace Mechadroids {
                 for(int i = 0; i < enemy.enemyCount; i++) {
                     EnemyEntityHandler enemyEntityHandler = new(enemy.enemySettings, parentHolder);
                     enemyEntityHandler.Initialize();
-                    EnemyEntityHandlers.TryAdd(i, enemyEntityHandler);
+                    EnemyEntityHandlers.TryAdd((int)enemy.enemyType + i, enemyEntityHandler);
                 }
             }
         }
