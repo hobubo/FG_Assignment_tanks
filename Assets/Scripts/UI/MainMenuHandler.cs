@@ -37,8 +37,6 @@ namespace Mechadroids.UI {
             if(!inputHandler.cursorState) inputHandler.SetCursorState(true, CursorLockMode.None);
             if(inputHandler.InputActions.UI.Click.WasPerformedThisFrame()) {
                 if(startButton.clicked) {
-                    if(inputHandler.cursorState) inputHandler.SetCursorState(false, CursorLockMode.Locked);
-                    Time.timeScale = 1;
                     Dispose();
                 }
                 if(quitButton.clicked) {
@@ -49,6 +47,8 @@ namespace Mechadroids.UI {
 
         public void Dispose() {
             if(mainMenu != null) {
+                Time.timeScale = 1;
+                inputHandler.SetCursorState(false, CursorLockMode.Locked);
                 Object.Destroy(mainMenu.gameObject);
             }
         }

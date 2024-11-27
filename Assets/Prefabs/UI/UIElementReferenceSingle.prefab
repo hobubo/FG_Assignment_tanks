@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.1
+  m_fontSize: 24
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -192,7 +192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.3750916, y: -0.000030517578}
+  m_AnchoredPosition: {x: -5.375122, y: 0}
   m_SizeDelta: {x: -217.98, y: -19.081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8725464843190038092
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.1
+  m_fontSize: 24
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6001672388389393068}
   - component: {fileID: 8928281985222018398}
-  - component: {fileID: 3793566446807851981}
+  - component: {fileID: 2269272297217620496}
   m_Layer: 5
   m_Name: UIElementReferenceSingle
   m_TagString: Untagged
@@ -706,7 +706,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7460208810405132219}
   m_CullTransparentMesh: 1
---- !u!114 &3793566446807851981
+--- !u!114 &2269272297217620496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7460208810405132219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2898d4ec95420a643a176ef5ef7eebfd, type: 3}
+  m_Script: {fileID: 11500000, guid: e113b861069b6b545b60cb2f4ec87a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameField: {fileID: 3040237516827294765}

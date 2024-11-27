@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb12a7df1b30487f815e3192ff43d1f8, type: 3}
   m_Name: EnemyWalkerRoute
   m_EditorClassIdentifier: 
-  routeId: 0
+  routeId: 1
   routePoints:
   - {x: 50, y: 0, z: 10}
   - {x: 50, y: 0, z: 70}

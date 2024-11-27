@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dc857f623496f847e5a570dbee608, type: 3}
   m_Name: UIPrefabs
   m_EditorClassIdentifier: 
+  mainMenuReferencePrefab: {fileID: 4522879463847639998, guid: 2f0fad78aea2fd34ba3eb31381350ae2, type: 3}
   debugMenuReferencePrefab: {fileID: 4522879463847639998, guid: 67dffd530d3133240949ef0807a74ba1, type: 3}
   uiElementReferencePrefabs:
-  - {fileID: 3793566446807851981, guid: f8d7709d4b1e6624d976d13c5856c680, type: 3}
+  - {fileID: 2269272297217620496, guid: f8d7709d4b1e6624d976d13c5856c680, type: 3}
+  - {fileID: 6609125678792104950, guid: 988b790a892a8df4292661748179bc3e, type: 3}
+  - {fileID: 9045061379971181724, guid: e7334642557ea1b4bba20637e00fef2d, type: 3}
