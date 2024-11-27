@@ -7,7 +7,7 @@ namespace Mechadroids.UI {
     public class DebugMenuHandler {
         private readonly UIPrefabs uiPrefabs;
         private readonly InputHandler inputHandler;
-        private DebugMenuReference debugMenu;
+        private MenuReference debugMenu;
 
         public DebugMenuHandler(UIPrefabs uiPrefabs, InputHandler inputHandler) {
             this.uiPrefabs = uiPrefabs;
@@ -45,9 +45,9 @@ namespace Mechadroids.UI {
         /// <typeparam name="T"></typeparam>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void AddUIElement<T>(UIElementType type, string variableName, T[] value, Action<T[]> onValueChanged) {
-            UIElementReference uiElementReference = uiPrefabs.GetUIElementReference(type);
+            UIInputReference uiElementReference = uiPrefabs.GetUIElementReference<UIInputReference>(type);
             // since this is a debug menu feature, we do not need to bother with pooling and saving memory since most likely this code will be removed from the release version
-            UIElementReference uiElement = Object.Instantiate(uiElementReference, debugMenu.contentHolder);
+            UIInputReference uiElement = Object.Instantiate(uiElementReference, debugMenu.contentHolder);
             uiElement.SetName(variableName);
             switch(type) {
                 case UIElementType.Single:

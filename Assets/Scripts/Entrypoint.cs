@@ -19,6 +19,7 @@ namespace Mechadroids {
         private AIEntitiesHandler aiEntitiesHandler;
         private bool initialized;
         private DebugMenuHandler debugMenuHandler;
+        private MainMenuHandler mainMenuHandler;
         private UIPrefabs uiPrefabs;
 
         public void Initialize() {
@@ -31,6 +32,8 @@ namespace Mechadroids {
             inputHandler = new InputHandler();
             inputHandler.Initialize();
 
+            mainMenuHandler = new MainMenuHandler(uiPrefabs, inputHandler);
+            mainMenuHandler.Initialize();
             // this define symbol, if removed from Project Settings, makes sure that in a release build this code will be stripped
 #if GAME_DEBUG
             debugMenuHandler = new DebugMenuHandler(uiPrefabs, inputHandler);
@@ -53,6 +56,7 @@ namespace Mechadroids {
             playerEntityHandler.Tick();
             aiEntitiesHandler.Tick();
             debugMenuHandler.Tick();
+            mainMenuHandler.Tick();
         }
 
         public void FixedUpdate() {
@@ -71,6 +75,7 @@ namespace Mechadroids {
             playerEntityHandler.Dispose();
             aiEntitiesHandler.Dispose();
             debugMenuHandler.Dispose();
+            mainMenuHandler.Dispose();
         }
     }
 }

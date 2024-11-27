@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Mechadroids.UI {
-    public class DebugMenuReference : MonoBehaviour {
+    public class MenuReference : MonoBehaviour {
         public Transform contentHolder;
     }
 }
