@@ -29,12 +29,11 @@ namespace Mechadroids {
         }
 
         public void Initialize() {
-            inputHandler.SetCursorState(false, CursorLockMode.Locked);
 
             playerReference = Object.Instantiate(playerPrefabs.playerReferencePrefab);
             playerReference.transform.position = playerStart.position;
             playerReference.transform.rotation = playerStart.rotation;
-            followCamera.Follow = playerReference.transform;
+            followCamera.Follow = playerReference.turretBase;
 
             hitIndicatorInstance = Object.Instantiate(playerPrefabs.hitIndicatorPrefab);
             hitIndicatorInstance.gameObject.SetActive(false);

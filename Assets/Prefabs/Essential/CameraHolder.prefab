@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5816114552323070042}
   - component: {fileID: 6403080669344447805}
   - component: {fileID: 2644271456680014742}
-  - component: {fileID: 9170150151280999287}
+  - component: {fileID: 382281707135119373}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.5, z: 0.3}
+  Damping: {x: 0.1, y: 0.5, z: 0.5}
   ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 3
   CameraSide: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
     CameraRadius: 0.2
     DampingIntoCollision: 0
     DampingFromCollision: 0.5
---- !u!114 &9170150151280999287
+--- !u!114 &382281707135119373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LookAtOffset: {x: 0, y: 2, z: 0}
+  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2089310666498851504
 GameObject:
   m_ObjectHideFlags: 0
