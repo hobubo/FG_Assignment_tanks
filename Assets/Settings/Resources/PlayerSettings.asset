@@ -17,9 +17,9 @@ MonoBehaviour:
   acceleration: 7
   deceleration: 7
   maxSlopeAngle: 45
-  turretRotationSpeed: 10
-  barrelRotationSpeed: 10
+  turretRotationSpeed: 5
+  barrelRotationSpeed: 5
   maxBarrelElevation: 25
   minBarrelElevation: -45
-  minTurretAngle: -180
-  maxTurretAngle: 180
+  minTurretAngle: -90
+  maxTurretAngle: 90
