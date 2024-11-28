@@ -21,5 +21,6 @@ namespace Mechadroids {
         public EnemyType enemyType;
         public EnemySettings enemySettings;
         public int enemyCount = 1;
+        public Vector3 enemyTriggerZone;
     }
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   moveSpeed: 12
-  rotationSpeed: 15
+  rotationSpeed: 50
   acceleration: 7
   deceleration: 7
-  maxSlopeAngle: 45
+  maxSlopeAngle: 60
   turretRotationSpeed: 5
   barrelRotationSpeed: 5
   maxBarrelElevation: 25

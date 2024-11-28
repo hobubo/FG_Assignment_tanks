@@ -16,9 +16,9 @@ MonoBehaviour:
     enemyType: 1
     enemyReferencePrefab: {fileID: 1215594269258311897, guid: 35902d950096e064799095795d4d4e94, type: 3}
     totalHealth: 100
-    patrolSpeed: 2
+    patrolSpeed: 3
     patrolRotationSpeed: 1
-    detectionRadius: 70
+    detectionRadius: 65
     maxDistanceFromPlayer: 90
     attackRange: 60
     attackSpeed: 7

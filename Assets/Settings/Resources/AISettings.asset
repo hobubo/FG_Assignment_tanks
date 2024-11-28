@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: AISettings
   m_EditorClassIdentifier: 
   enemiesToSpawn:
-  - enemyType: 2
-    enemySettings: {fileID: 11400000, guid: 0675b04167ecbcf4098f5eba984190ca, type: 2}
-    enemyCount: 1
   - enemyType: 1
     enemySettings: {fileID: 11400000, guid: c168c569ff9c8fa4e8d59b9d394cee90, type: 2}
     enemyCount: 1
+    spawnTriggerPosition: {x: 28.019857, y: 1.5960541, z: 8.8761215}

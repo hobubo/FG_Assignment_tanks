@@ -18,7 +18,7 @@ namespace Mechadroids {
             // initialize all enemies here
             foreach(EnemyGroup enemy in aiSettings.enemiesToSpawn) {
                 for(int i = 0; i < enemy.enemyCount; i++) {
-                    EnemyEntityHandler enemyEntityHandler = new(enemy.enemySettings, parentHolder);
+                    EnemyEntityHandler enemyEntityHandler = new(enemy.enemySettings, enemy.enemyTriggerZone, parentHolder);
                     enemyEntityHandler.Initialize();
                     EnemyEntityHandlers.TryAdd((int)enemy.enemyType + i, enemyEntityHandler);
                 }

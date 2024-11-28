@@ -7,32 +7,51 @@ namespace Mechadroids {
     /// </summary>
     public class EnemyEntityHandler : IEntityHandler {
         private readonly EnemySettings enemySettings;
+        private readonly Vector3 triggerZone;
         private readonly Transform parentHolder;
         private EnemyReference enemyReference;
 
         public IEntityState EntityState { get; set; }
 
-        public EnemyEntityHandler(EnemySettings enemySettings, Transform parentHolder) {
+        public EnemyEntityHandler(EnemySettings enemySettings, Vector3 triggerZone, Transform parentHolder) {
             this.enemySettings = enemySettings;
+            this.triggerZone = triggerZone;
             this.parentHolder = parentHolder;
         }
 
         public void Initialize() {
-            enemyReference = Object.Instantiate(enemySettings.enemy.enemyReferencePrefab, parentHolder);
-            enemyReference.transform.position = enemySettings.routeSettings.routePoints[0];
+            // enemyReference = Object.Instantiate(enemySettings.enemy.enemyReferencePrefab, parentHolder);
+            // enemyReference.transform.position = enemySettings.routeSettings.routePoints[0];
+
+            // GameObject triggerVolume = new GameObject("TriggerVolume");
+            // SphereCollider collider = triggerVolume.AddComponent<SphereCollider>();
+            // triggerVolume.transform.position = triggerZone;
+            // collider.radius = 25f;
+            // collider.isTrigger = true;
+            // collider.OnTriggerEnter += OnTriggerEnter;
 
             // Initialize the default state (Idle State)
-            EntityState = new EnemyIdleState(this, enemyReference);
-            EntityState.Enter();
+        }
+
+        public void CheckTriggerZone() {
+            Debug.Log(Physics.CheckSphere(triggerZone, 25f, LayerMask.GetMask("Player")));
+            if(Physics.CheckSphere(triggerZone, 25f, LayerMask.GetMask("Player"))) {
+                enemyReference = Object.Instantiate(enemySettings.enemy.enemyReferencePrefab, parentHolder);
+                enemyReference.transform.position = enemySettings.routeSettings.routePoints[0];
+                EntityState = new EnemyIdleState(this, enemyReference);
+                EntityState.Enter();
+            }
         }
 
         public void Tick() {
-            EntityState.HandleInput();
-            EntityState.LogicUpdate();
+            if(enemyReference != null) {
+                EntityState.HandleInput();
+                EntityState.LogicUpdate();
+            } else CheckTriggerZone();
         }
 
         public void PhysicsTick() {
-            EntityState.PhysicsUpdate();
+            if(enemyReference != null) EntityState.PhysicsUpdate();
         }
 
         public void LateTick() {
