@@ -4,12 +4,14 @@ namespace Mechadroids {
     public class EnemyIdleState : IEntityState {
         private readonly IEntityHandler entityHandler;
         private readonly EnemyReference enemyReference;
+        private readonly Transform playerTransform;
         private float idleDuration = 2f;
         private float idleTimer;
 
-        public EnemyIdleState(IEntityHandler entityHandler, EnemyReference enemyReference) {
+        public EnemyIdleState(IEntityHandler entityHandler, EnemyReference enemyReference, Transform playerTransform) {
             this.entityHandler = entityHandler;
             this.enemyReference = enemyReference;
+            this.playerTransform = playerTransform;
         }
 
         public void Enter() {
@@ -35,7 +37,7 @@ namespace Mechadroids {
 
         private void TransitionToPatrolState() {
             Exit();
-            entityHandler.EntityState = new EnemyPatrolState(entityHandler, enemyReference);
+            entityHandler.EntityState = new EnemyPatrolState(entityHandler, enemyReference, playerTransform);
             entityHandler.EntityState.Enter();
         }
     }

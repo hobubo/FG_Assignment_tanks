@@ -14,8 +14,6 @@ namespace Mechadroids {
         }
 
         public void Enter() {
-            if(playerTransform) return;
-            playerTransform = GameObject.FindWithTag("Player").transform;
             Debug.Log(enemyReference);
         }
 

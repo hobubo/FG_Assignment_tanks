@@ -6,6 +6,7 @@ namespace Mechadroids {
     public class AIEntitiesHandler {
         private readonly AISettings aiSettings;
         private readonly Transform parentHolder;
+        private Transform playerTransform;
 
         private Dictionary<int, EnemyEntityHandler> EnemyEntityHandlers { get; } = new();
 
@@ -15,11 +16,11 @@ namespace Mechadroids {
         }
 
         public void Initialize() {
+            if(playerTransform == null) playerTransform = GameObject.FindWithTag("Player").transform;
             // initialize all enemies here
             foreach(EnemyGroup enemy in aiSettings.enemiesToSpawn) {
                 for(int i = 0; i < enemy.enemyCount; i++) {
-                    EnemyEntityHandler enemyEntityHandler = new(enemy.enemySettings, enemy.enemyTriggerZone, parentHolder);
-                    enemyEntityHandler.Initialize();
+                    EnemyEntityHandler enemyEntityHandler = new(enemy.enemySettings, enemy.enemyTriggerZone, parentHolder, playerTransform);
                     EnemyEntityHandlers.TryAdd((int)enemy.enemyType + i, enemyEntityHandler);
                 }
             }
