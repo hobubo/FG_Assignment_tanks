@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: EnemyTankRoute
   m_EditorClassIdentifier: 
   routeId: 0
-  displayRoutePoints: 0
+  displayRoutePoints: 1
   routePoints:
-  - {x: 40.09169, y: 0, z: 23.732439}
-  - {x: 23.031042, y: 0, z: -4.9255786}
-  - {x: 67.02496, y: 12.569571, z: 64.58107}
-  - {x: 68.14679, y: 12.569571, z: 12.119883}
+  - {x: 89.03315, y: 0, z: 116.83614}
+  - {x: 69.14418, y: 0, z: 23.730127}
+  - {x: 57.026695, y: 0, z: 62.535347}

@@ -13,6 +13,7 @@ namespace Mechadroids.UI {
     public class UIPrefabs : ScriptableObject {
         public MenuReference mainMenuReferencePrefab;
         public MenuReference debugMenuReferencePrefab;
+        public MenuReference winningMenuReferencePrefab;
 
         [Tooltip("UIElementReference prefabs for each UIElementType")]
         [SerializeField] private UIElementReference [] uiElementReferencePrefabs;

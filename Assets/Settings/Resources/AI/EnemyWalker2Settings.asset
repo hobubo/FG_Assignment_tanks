@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     enemyType: 0
-    enemyReferencePrefab: {fileID: 0}
+    enemyReferencePrefab: {fileID: 5575958383597271655, guid: adb538fb62f67c944b3b59410c1db707, type: 3}
     totalHealth: 100
     patrolSpeed: 2
     patrolRotationSpeed: 1
@@ -23,4 +23,4 @@ MonoBehaviour:
     attackRange: 30
     attackSpeed: 7
     attackRotationSpeed: 2
-  routeSettings: {fileID: 0}
+  routeSettings: {fileID: 11400000, guid: 6cbffd675e57f504aa26298793fe9609, type: 2}

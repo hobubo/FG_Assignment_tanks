@@ -16,4 +16,16 @@ MonoBehaviour:
   - enemyType: 1
     enemySettings: {fileID: 11400000, guid: c168c569ff9c8fa4e8d59b9d394cee90, type: 2}
     enemyCount: 1
-    spawnTriggerPosition: {x: 28.019857, y: 1.5960541, z: 8.8761215}
+    enemyTriggerZone: {x: 45.03166, y: 0, z: 20.410225}
+  - enemyType: 2
+    enemySettings: {fileID: 11400000, guid: 0675b04167ecbcf4098f5eba984190ca, type: 2}
+    enemyCount: 1
+    enemyTriggerZone: {x: 95.7451, y: 0, z: 136.24548}
+  - enemyType: 2
+    enemySettings: {fileID: 11400000, guid: 04fede5934a057043a9c27c9e638255b, type: 2}
+    enemyCount: 1
+    enemyTriggerZone: {x: 104.0812, y: 0, z: 431.14594}
+  - enemyType: 3
+    enemySettings: {fileID: 11400000, guid: f26a8b96f01c43d439ac224ac8e74df0, type: 2}
+    enemyCount: 1
+    enemyTriggerZone: {x: 106.21492, y: 0, z: 745.4446}

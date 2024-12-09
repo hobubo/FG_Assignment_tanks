@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: EnemyWalkerRoute
   m_EditorClassIdentifier: 
   routeId: 1
+  displayRoutePoints: 1
   routePoints:
-  - {x: 47.07, y: 0, z: 10}
-  - {x: 50, y: 0, z: 70}
+  - {x: 61.583454, y: 0, z: 277.12225}
+  - {x: 125.86273, y: 0, z: 221.94804}
+  - {x: 125.86273, y: 0, z: 316.89664}

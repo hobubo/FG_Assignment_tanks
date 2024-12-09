@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuReferencePrefab: {fileID: 4522879463847639998, guid: 2f0fad78aea2fd34ba3eb31381350ae2, type: 3}
   debugMenuReferencePrefab: {fileID: 4522879463847639998, guid: 67dffd530d3133240949ef0807a74ba1, type: 3}
+  winningMenuReferencePrefab: {fileID: 4522879463847639998, guid: 2c412834c731058408ccd108629095f9, type: 3}
   uiElementReferencePrefabs:
   - {fileID: 2269272297217620496, guid: f8d7709d4b1e6624d976d13c5856c680, type: 3}
   - {fileID: 6609125678792104950, guid: 988b790a892a8df4292661748179bc3e, type: 3}

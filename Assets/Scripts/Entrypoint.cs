@@ -9,6 +9,7 @@ namespace Mechadroids {
     /// </summary>
     public class Entrypoint : MonoBehaviour {
         public Transform playerStart;
+        public LevelEndTrigger levelEnd;
         public CinemachineCamera followCamera;
         public Transform aiParentTransform;
 
@@ -20,6 +21,7 @@ namespace Mechadroids {
         private bool initialized;
         private DebugMenuHandler debugMenuHandler;
         private MainMenuHandler mainMenuHandler;
+        private WinningMenuHandler winningMenuHandler;
         private UIPrefabs uiPrefabs;
 
         public void Initialize() {
@@ -32,8 +34,12 @@ namespace Mechadroids {
             inputHandler = new InputHandler();
             inputHandler.Initialize();
 
+            winningMenuHandler = new WinningMenuHandler(uiPrefabs, inputHandler, levelEnd);
+            winningMenuHandler.Initialize();
+
             mainMenuHandler = new MainMenuHandler(uiPrefabs, inputHandler);
             mainMenuHandler.Initialize();
+
             // this define symbol, if removed from Project Settings, makes sure that in a release build this code will be stripped
 #if GAME_DEBUG
             debugMenuHandler = new DebugMenuHandler(uiPrefabs, inputHandler);

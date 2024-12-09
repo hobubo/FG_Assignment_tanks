@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: EnemyBuggyRoute
   m_EditorClassIdentifier: 
   routeId: 0
-  displayRoutePoints: 0
-  routePoints: []
+  displayRoutePoints: 1
+  routePoints:
+  - {x: -93.93208, y: 0, z: 1018.7063}
+  - {x: -55.961613, y: 0, z: 1166.9222}
+  - {x: 90.29671, y: 0, z: 985.5165}
