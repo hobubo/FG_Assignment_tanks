@@ -101,6 +101,7 @@ MonoBehaviour:
   turretBase: {fileID: 5288390218034827684}
   barrel: {fileID: 184872113390101345}
   barrelEnd: {fileID: 245764235136577419}
+  bulletRef: {fileID: 8332885718362120257, guid: 99d5b8774b9801841bbc0a308473c67a, type: 3}
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 1

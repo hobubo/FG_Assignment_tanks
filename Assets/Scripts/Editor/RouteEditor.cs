@@ -24,6 +24,7 @@ public class RouteEditor : Editor
             Vector3 newPoint = Handles.PositionHandle(point, Quaternion.identity);
             if (EditorGUI.EndChangeCheck()) {
                 route.routePoints[i] = newPoint;
+                EditorUtility.SetDirty(route);
             }
             Handles.Label(point, $"Point {i}");
         }

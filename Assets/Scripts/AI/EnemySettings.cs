@@ -22,11 +22,11 @@ namespace Mechadroids {
         public float patrolRotationSpeed = 1f;
 
         [Header("Detection Settings")]
-        public float detectionRadius = 10f;
+        public float detectionRadius = 60f;
 
         [Header("Attack Settings")]
-        public float maxDistanceFromPlayer = 5f;
-        public float attackRange = 30f;
+        public float maxDistanceFromPlayer = 90f;
+        public float attackRange = 60f;
         public float attackSpeed = 7f;
         public float attackRotationSpeed = 2f;
     }

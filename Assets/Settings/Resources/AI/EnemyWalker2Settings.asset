@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: EnemyWalker2Settings
   m_EditorClassIdentifier: 
   enemy:
-    enemyType: 0
+    enemyType: 3
     enemyReferencePrefab: {fileID: 5575958383597271655, guid: adb538fb62f67c944b3b59410c1db707, type: 3}
     totalHealth: 100
     patrolSpeed: 2
     patrolRotationSpeed: 1
-    detectionRadius: 10
+    detectionRadius: 50
     maxDistanceFromPlayer: 5
     attackRange: 30
     attackSpeed: 7

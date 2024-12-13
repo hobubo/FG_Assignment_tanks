@@ -15,6 +15,9 @@ namespace Mechadroids {
         [Tooltip("Where the bullets come out")]
         public Transform barrelEnd;
 
+        [Tooltip("The bullet reference")]
+        public GameObject bulletRef;
+
         [Header("Aiming")]
         public LayerMask aimLayerMask; // Layers to consider for aiming
 

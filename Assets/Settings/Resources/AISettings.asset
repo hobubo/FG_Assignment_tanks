@@ -16,16 +16,16 @@ MonoBehaviour:
   - enemyType: 1
     enemySettings: {fileID: 11400000, guid: c168c569ff9c8fa4e8d59b9d394cee90, type: 2}
     enemyCount: 1
-    enemyTriggerZone: {x: 45.03166, y: 0, z: 20.410225}
+    enemyTriggerZone: {x: 22.00209, y: 0, z: 5.886326}
   - enemyType: 2
     enemySettings: {fileID: 11400000, guid: 0675b04167ecbcf4098f5eba984190ca, type: 2}
     enemyCount: 1
-    enemyTriggerZone: {x: 95.7451, y: 0, z: 136.24548}
-  - enemyType: 2
+    enemyTriggerZone: {x: 69.7, y: 0, z: 72.9}
+  - enemyType: 3
     enemySettings: {fileID: 11400000, guid: 04fede5934a057043a9c27c9e638255b, type: 2}
     enemyCount: 1
-    enemyTriggerZone: {x: 104.0812, y: 0, z: 431.14594}
-  - enemyType: 3
+    enemyTriggerZone: {x: 104.63209, y: -2.1601868, z: 153.86902}
+  - enemyType: 4
     enemySettings: {fileID: 11400000, guid: f26a8b96f01c43d439ac224ac8e74df0, type: 2}
     enemyCount: 1
-    enemyTriggerZone: {x: 106.21492, y: 0, z: 745.4446}
+    enemyTriggerZone: {x: 107.66682, y: -1.7057877, z: 430.39224}

@@ -32,6 +32,7 @@ namespace Mechadroids {
             // HandleMovement();
             HandleMovement();
             HandleTurretAiming();
+            HandleShoot();
 
             // if(Mathf.Approximately(currentSpeed, 0) && inputHandler.MouseDelta == Vector2.zero) {
             //     entityHandler.EntityState.Exit();
@@ -50,24 +51,23 @@ namespace Mechadroids {
             // Debug.Log("exiting Active state");
         }
 
+        private void HandleShoot() {
+            if(inputHandler.InputActions.Player.Attack.WasPerformedThisFrame()) {
+                Debug.Log("fire");
+                GameObject.Instantiate(playerReference.bulletRef, playerReference.barrelEnd.position, playerReference.barrelEnd.rotation);
+            }
+        }
+
 
         private void HandleMovement() {
-            // create accelerate and decelerate logic
             var accelerate = inputHandler.MovementInput.y * playerReference.playerSettings.acceleration * Time.deltaTime;
             var decelerate = - Mathf.Sign(currentSpeed) * playerReference.playerSettings.deceleration * Time.deltaTime;
-            // conditionally sets accelerate and decelerate based on Input
             currentSpeed += inputHandler.MovementInput.y != 0 ? accelerate : decelerate;
-            // adjust speed based on slopes
             currentSpeed = EntityHelper.HandleSlope(playerReference.tankBody, playerReference.playerSettings.maxSlopeAngle, currentSpeed);
-            // limits speed to min and max
             currentSpeed = Mathf.Clamp(currentSpeed, - playerReference.playerSettings.moveSpeed, + playerReference.playerSettings.moveSpeed);
-            // update position
             playerReference.tankBody.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
-            // create rotation logic
             var rotation = inputHandler.MovementInput.x * playerReference.playerSettings.rotationSpeed * Time.deltaTime;
-            // conditionally sets rotation to inverse if moving backwards
             rotation = currentSpeed > 0 ? rotation : -rotation;
-            // update rotation
             playerReference.tankBody.Rotate(Vector3.up, rotation);
         }
 

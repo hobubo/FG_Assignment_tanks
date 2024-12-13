@@ -1669,6 +1669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2932645739770280202}
   - component: {fileID: 6105596441754366888}
+  - component: {fileID: 3823263169325633486}
   m_Layer: 0
   m_Name: Legs_Spider_Hvy_Geom
   m_TagString: Untagged
@@ -1685,7 +1686,7 @@ Transform:
   m_GameObject: {fileID: 7430971992654202271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1773,6 +1774,29 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000013589859, y: 1.2440755, z: -0.5280844}
     m_Extent: {x: 2.6360505, y: 1.3667591, z: 2.9501762}
   m_DirtyAABB: 0
+--- !u!136 &3823263169325633486
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430971992654202271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.9501762
+  m_Height: 2.7335181
+  m_Direction: 1
+  m_Center: {x: -0.000013589859, y: 1.2440755, z: -0.5280844}
 --- !u!1 &7782312016022889490
 GameObject:
   m_ObjectHideFlags: 0

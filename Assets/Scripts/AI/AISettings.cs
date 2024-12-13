@@ -7,6 +7,7 @@ namespace Mechadroids {
         None,
         Tank,
         Walker,
+        Walker2,
         Wheeled,
         Fixed
     }
