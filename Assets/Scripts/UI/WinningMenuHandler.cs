@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
 namespace Mechadroids.UI {
@@ -28,7 +29,7 @@ namespace Mechadroids.UI {
 
             startButton = Object.Instantiate(uiButtonReference, winningMenu.contentHolder);
             startButton.transform.localPosition = new Vector3(0, 50, 0);
-            startButton.SetText("Restart Level");
+            startButton.SetText("Back To Main Menu");
 
             quitButton = Object.Instantiate(uiButtonReference, winningMenu.contentHolder);
             quitButton.transform.localPosition = new Vector3(0, -50, 0);
@@ -44,8 +45,8 @@ namespace Mechadroids.UI {
         public void Tick() {
             if(inputHandler.InputActions.UI.Click.WasPerformedThisFrame()) {
                 if(startButton.clicked) {
-                    // Reset Game State
-                    // Dispose();
+                    int sceneCount = SceneManager.loadedSceneCount;
+                    SceneManager.LoadScene("Boot");
                 }
                 if(quitButton.clicked) {
                     Application.Quit();

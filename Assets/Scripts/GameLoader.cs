@@ -20,6 +20,7 @@ namespace Mechadroids {
             // ...then we initialize the entrypoint and consecutively the game
             Entrypoint entrypoint = FindFirstObjectByType<Entrypoint>();
             entrypoint.Initialize();
+            SceneManager.UnloadSceneAsync(0);
         }
 
         private IEnumerator LoadSceneAdditiveIfNotLoaded(string sceneName) {

@@ -77,6 +77,8 @@ namespace Mechadroids {
                 hitIndicatorInstance = null;
             }
         }
+
+
     }
 
     // code that handles the player functionality. Should to the correct state

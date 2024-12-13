@@ -63,6 +63,7 @@ namespace Mechadroids {
             aiEntitiesHandler.Tick();
             debugMenuHandler.Tick();
             mainMenuHandler.Tick();
+            winningMenuHandler.Tick();
         }
 
         public void FixedUpdate() {
